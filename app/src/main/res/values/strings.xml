@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Chefkoch Training App</string>
+
+  <string name="cheese_ipsum">das</string>
+  <string name="checkin">Checkin</string>
+  <string name="menu_settings">Settings</string>
+
+</resources>
