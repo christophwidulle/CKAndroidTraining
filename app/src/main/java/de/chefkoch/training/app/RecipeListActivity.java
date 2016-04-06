@@ -64,9 +64,7 @@ public class RecipeListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final RecipeSearchResult recipeSearchResult = recipeSearchResults.get(position);
-                Intent intent = new Intent(getBaseContext(), RecipeActivity.class);
-                intent.putExtra("id", recipeSearchResult.getRecipe().getId());
-                startActivity(intent);
+                //todo navigation
             }
         });
 
