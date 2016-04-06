@@ -46,7 +46,6 @@ public class RecipeActivity extends AppCompatActivity {
         recipeImage = (ImageView) findViewById(R.id.recipeImage);
 
         final String id = getIntent().getStringExtra("id");
-        //1162451222354826
 
         new CkApiClient().recipe().getRecipe(id).enqueue(new Callback<Recipe>() {
             @Override
