@@ -45,7 +45,6 @@ public class RecipeActivity extends AppCompatActivity {
         recipeTitle = (TextView) findViewById(R.id.recipeTitle);
         recipeImage = (ImageView) findViewById(R.id.recipeImage);
 
-        //todo navigation
         final String id = "1162451222354826";
 
         new CkApiClient().recipe().getRecipe(id).enqueue(new Callback<Recipe>() {
@@ -66,6 +65,7 @@ public class RecipeActivity extends AppCompatActivity {
     private void populate(Recipe recipe) {
 
         recipeTitle.setText(recipe.getTitle());
+
         if (recipe.getPreviewImageId() != null) {
             ImageLoader.loadInto(recipeImage, ApiHelper.getRecipeImageUrl(recipe.getId(), recipe.getPreviewImageId(), ApiHelper.IMAGE_FORMAT_CROP_420x280));
         }
