@@ -32,41 +32,17 @@ public class RecipeListActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listview);
 
-
-        Search search = new Search();
-        search.getParameters().setMinimumRating(4);
-
-        new CkApiClient().recipe().findRecipes(100, 0, search.asMap()).enqueue(new Callback<RecipeSearchResultResponse>() {
-            @Override
-            public void onResponse(Response<RecipeSearchResultResponse> response) {
-                populate(response.body().getResults());
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-
-            }
-        });
+        //todo rufe die API auf
 
 
     }
 
     private void populate(final List<RecipeSearchResult> recipeSearchResults) {
-        final List<String> vals = new ArrayList<>();
+        final List<String> listItems = new ArrayList<>();
         for (RecipeSearchResult resultItem : recipeSearchResults) {
-            vals.add(resultItem.getRecipe().getTitle());
+            listItems.add(resultItem.getRecipe().getTitle());
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, vals);
-
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final RecipeSearchResult recipeSearchResult = recipeSearchResults.get(position);
-                //todo navigation
-            }
-        });
+        //todo setze der Liste einen Adapter
 
     }
 }
